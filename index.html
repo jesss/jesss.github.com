@@ -11,6 +11,26 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script>
+        window.onload = function() {
+            var startDate = new Date(2011, 5, 6), 
+                nowDate = new Date(), 
+                msYears = 60 * 60 * 24 * 365 * 1000, 
+                yearDiff = (nowDate - startDate) / msYears,
+                years = Math.floor(yearDiff),
+                months = Math.ceil((yearDiff - years) * 12),
+                job = document.getElementById('presentJobDuration'),
+                yearString = "";
+
+            if (years == 1) {
+                yearString += "" + years + "year, ";
+            } else if (years > 1) {
+                yearString += "" + years + "years, ";
+            }        
+
+            job.innerHTML = yearString + months + " months";
+        }
+    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -40,8 +60,7 @@
 <strong>Technical Operations Coordinator and Nerd Whisperer</strong> <em>Box</em>
 </h3>
 
-<p>June 2011 - Present</p>
-
+<p>June 2011 - Present (<span id="presentJobDuration">1 year 8 months</span>)</p>
 <p><em>Project orchestrator, solution creator, efficiency facilitator.</em></p>
 
 <ul>
@@ -54,7 +73,6 @@
 </h3>
 
 <p>October 2010 - June 2011</p>
-
 <p><em>Copywriter, editor, strategist.</em></p>
 
 <ul>
@@ -66,7 +84,6 @@
 </h3>
 
 <p>August 2008 - March 2011</p>
-
 <p><em>Trainer, troubleshooter, problem solver.</em></p>
 
 <ul>
@@ -78,7 +95,6 @@
 </h3>
 
 <p>April 2007 - October 2010</p>
-
 <p><em>Server, bartender, listener.</em></p>
 
 <ul>
@@ -90,6 +106,7 @@
 </h3>
 
 <p>September 2006 - February 2009</p>
+<em>Managed and implemented all aspects of music recording sessions and production projects.</em></p>
 
 <p><em>Solderer, coordinator, arranger.</em></p>
 
