@@ -11,6 +11,26 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script>
+        window.onload = function() {
+            var startDate = new Date(2011, 5, 6), 
+                nowDate = new Date(), 
+                msYears = 60 * 60 * 24 * 365 * 1000, 
+                yearDiff = (nowDate - startDate) / msYears,
+                years = Math.floor(yearDiff),
+                months = Math.ceil((yearDiff - years) * 12),
+                job = document.getElementById('presentJobDuration'),
+                yearString = "";
+
+            if (years == 1) {
+                yearString += "" + years + "year, ";
+            } else if (years > 1) {
+                yearString += "" + years + "years, ";
+            }        
+
+            job.innerHTML = yearString + months + " months";
+        }
+    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -37,7 +57,7 @@
 
 <h3>Technical Operations Coordinator and Nerd Whisperer at Box</h3>
 
-<p>June 2011 - Present (1 year 8 months)
+<p>June 2011 - Present (<span id="presentJobDuration">1 year 8 months</span>)
 <em>Project orchestrator, solution creator, efficiency facilitator.</em></p>
 
 <ul>
